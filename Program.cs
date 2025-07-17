@@ -4,7 +4,8 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            // Create a HotelManager object to manage the hotel system
+            HotelManager manager = new HotelManager();
+
         }
     }
-}
