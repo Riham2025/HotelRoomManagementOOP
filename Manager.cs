@@ -9,5 +9,7 @@ namespace HotelRoomManagement
     // Hotel Manager class to manage room operations
     class Manager
     {
+        // List to store all rooms
+        private List<Room> rooms = new List<Room>();
     }
 }
