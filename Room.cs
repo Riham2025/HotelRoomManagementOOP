@@ -39,14 +39,16 @@ namespace HotelRoomManagement
                    (IsReserved ? "Reserved" : "Available"); // Show room info with status
         }
 
-        public void Reserve(string guestName, int nights)
-        //This method allows the room to be marked as
-        //reserved, while saving the guest's name and number of nights.
+        public override string ToString()
         {
-            GuestName = guestName;
-            Nights = nights;
-            IsReserved = true;
-        }
+            if (IsReserved)
+            {
+                return $"Room {RoomNumber} | Rate: {DailyRate:C} | Reserved by: {GuestName} for {Nights} nights";
+            }
+            else
+            {
+                return $"Room {RoomNumber} | Rate: {DailyRate:C} | Available";
+            }
 
     }
 }
