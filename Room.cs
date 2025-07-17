@@ -21,5 +21,13 @@ namespace HotelRoomManagement
             DailyRate = dailyRate;         // Assign the daily rate
             IsReserved = false;            // New room is not reserved by default
         }
+
+        // Method to return a string representation of the room
+        public override string ToString()
+        {
+            return $"Room {RoomNumber} | Rate: {DailyRate:C} | " +
+                   (IsReserved ? "Reserved" : "Available"); // Show room info with status
+        }
     }
 }
+
