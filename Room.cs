@@ -31,6 +31,14 @@ namespace HotelRoomManagement
             return $"Room {RoomNumber} | Rate: {DailyRate:C} | " +
                    (IsReserved ? "Reserved" : "Available"); // Show room info with status
         }
+
+        public void Reserve(string guestName, int nights)
+        {
+            GuestName = guestName;
+            Nights = nights;
+            IsReserved = true;
+        }
+
     }
 }
 
