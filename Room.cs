@@ -14,6 +14,8 @@ namespace HotelRoomManagement
         public double DailyRate { get; set; } // Property: Daily rate for the room
         public bool IsReserved { get; set; } // Property: Reservation status (true if reserved)
 
+        public string GuestName { get; set; } // Stores the guest's name
+
         // Constructor to initialize a new room
         public Room(int roomNumber, double dailyRate)
         {
