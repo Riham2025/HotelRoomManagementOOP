@@ -11,5 +11,11 @@ namespace HotelRoomManagement
     {
         // List to store all rooms
         private List<Room> rooms = new List<Room>();
+
+        // Method to add a new room
+        public void AddRoom(int roomNumber, double dailyRate)
+        {
+
+        }
     }
 }
