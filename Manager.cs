@@ -24,5 +24,20 @@ namespace HotelRoomManagement
             Console.WriteLine("Room added successfully."); // Confirmation message
 
         }
-    }
+
+        // Method to view all rooms (available + reserved)
+        public void ViewRooms()
+        {
+            if (rooms.Count == 0)
+            {
+                Console.WriteLine("No rooms added yet."); // Handle empty list case
+                return;
+            }
+
+            Console.WriteLine("\nList of all rooms:");
+            foreach (Room room in rooms)
+            {
+                Console.WriteLine(room); // Uses Room.ToString()
+            }
+        }
 }
