@@ -33,6 +33,8 @@ namespace HotelRoomManagement
         }
 
         public void Reserve(string guestName, int nights)
+        //This method allows the room to be marked as
+        //reserved, while saving the guest's name and number of nights.
         {
             GuestName = guestName;
             Nights = nights;
