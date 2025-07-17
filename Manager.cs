@@ -15,6 +15,13 @@ namespace HotelRoomManagement
         // Method to add a new room
         public void AddRoom(int roomNumber, double dailyRate)
         {
+            // Create new Room object with user input
+            Room newRoom = new Room(roomNumber, dailyRate);
+
+            // Add the new room to the list
+            rooms.Add(newRoom);
+
+            Console.WriteLine("Room added successfully."); // Confirmation message
 
         }
     }
