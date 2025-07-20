@@ -48,7 +48,7 @@ class Manager
             // Search for the room with the given room number
             Room room = rooms.Find(r => r.RoomNumber == roomNumber); //Finds a room in the list by its number
 
-            if (room == null)
+            if (room == null) //If the room doesn’t exist, print error
             {
                 Console.WriteLine(" Room not found.");
             }
