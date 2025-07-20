@@ -24,6 +24,9 @@ namespace HotelRoomManagement
             IsReserved = true;
         }
 
+        public DateTime ReservationDate { get; set; } // Stores the date of reservation
+
+
         // Constructor to initialize a new room
         public Room(int roomNumber, double dailyRate) //This is a constructor: it runs when a new room is created
         {
