@@ -160,6 +160,8 @@ class Manager
 
         // Method to search for reservations by guest name
         public void SearchByGuestName(string guestName)
+        //Added SearchByGuestName() method in Manager class to find reservations by guest name.
+
         {
             bool found = false;
 
@@ -167,7 +169,8 @@ class Manager
 
             foreach (Room room in rooms) //Loops through all rooms
             {
-                if (room.IsReserved && room.GuestName != null && room.GuestName.Equals(guestName, StringComparison.OrdinalIgnoreCase)) //Checks if the room is reserved and guest name matches
+                if (room.IsReserved && room.GuestName != null && room.GuestName.Equals(guestName, StringComparison.OrdinalIgnoreCase))
+                ////Checks if the room is reserved and guest name matches
                 {
                     Console.WriteLine($" Found: Room {room.RoomNumber} | Nights: {room.Nights} | Total: {room.GetTotalCost():C}");
                     found = true;
