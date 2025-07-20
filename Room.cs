@@ -59,6 +59,7 @@ namespace HotelRoomManagement
             GuestName = null;
             Nights = 0;
             IsReserved = false;
+            //Sets IsReserved to false
         }
 
 
