@@ -35,13 +35,21 @@ namespace HotelRoomManagement
         // Method to return a string representation of the room
         public override string ToString()
         {
-            return $"Room {RoomNumber} | Rate: {DailyRate:C} | " +
-                   (IsReserved ? "Reserved" : "Available"); // Show room info with status
+            if (IsReserved)
+            {
+                return $"Room {RoomNumber} | Rate: {DailyRate:C} | Reserved by: {GuestName} for {Nights} nights";
+            }
+            else
+            {
+                return $"Room {RoomNumber} | Rate: {DailyRate:C} | Available";
+            }
         }
 
-       
 
-        
+
+
+
+
     }
 }
 
