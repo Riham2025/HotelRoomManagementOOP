@@ -16,6 +16,7 @@
                 Console.WriteLine("2. View All Rooms");
                 Console.WriteLine("3. Reserve a Room");
                 Console.WriteLine("4. View All Reservations with Total Cost");
+                Console.WriteLine("5. Cancel a Reservation");
                 Console.WriteLine("0. Exit");
                 Console.Write("Select an option: ");
 
@@ -54,6 +55,13 @@
                     case "4":
                         manager.ViewReservations();
                         break;
+
+                    case "5":
+                        Console.Write("Enter Room Number to cancel: ");
+                        int cancelRoomNumber = int.Parse(Console.ReadLine());
+                        manager.CancelRoomReservation(cancelRoomNumber);
+                        break;
+
 
 
                     case "0":
