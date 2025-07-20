@@ -151,10 +151,10 @@ class Manager
                 int nights = int.Parse(parts[4]);
                 DateTime reservationDate = DateTime.Parse(parts[5]); // Parses the reservation date
 
-                Room room = new Room(roomNumber, dailyRate); //Creates a new Room object with the parsed values
+                Room room = new Room(roomNumber, dailyRate);
                 if (isReserved)
                 {
-                    room.Reserve(guestName, nights); // If reserved, set guest name and nights
+                    room.Reserve(guestName, nights, reservationDate);
                 }
 
                 rooms.Add(room); // Adds the room to the list
