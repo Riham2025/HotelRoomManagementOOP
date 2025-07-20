@@ -60,6 +60,7 @@ namespace HotelRoomManagement
             Nights = 0;
             IsReserved = false;
             //Sets IsReserved to false
+            //Clears guest info and nights
         }
 
 
