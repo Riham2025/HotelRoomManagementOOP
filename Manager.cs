@@ -119,7 +119,8 @@ class Manager
                 foreach (Room room in rooms) //Loops through each room
                 {
                     // Save room info as a line in the file
-                    string line = $"{room.RoomNumber},{room.DailyRate},{room.IsReserved},{room.GuestName},{room.Nights}";
+                    string line = $"{room.RoomNumber},{room.DailyRate},{room.IsReserved},{room.GuestName},{room.Nights},{room.ReservationDate:yyyy-MM-dd}";
+
                     writer.WriteLine(line);
                 }
             }
