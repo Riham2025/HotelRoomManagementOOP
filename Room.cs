@@ -33,7 +33,7 @@ namespace HotelRoomManagement
         }
 
         // Method to return a string representation of the room
-        public override string ToString()
+        public override string ToString() //This controls how the room looks when printed
         {
             if (IsReserved)
             {
