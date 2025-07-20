@@ -87,5 +87,26 @@ class Manager
             }
         }
 
+        // Method to cancel reservation by room number
+        public void CancelRoomReservation(int roomNumber)
+        {
+            Room room = rooms.Find(r => r.RoomNumber == roomNumber);
+
+            if (room == null)
+            {
+                Console.WriteLine(" Room not found.");
+            }
+            else if (!room.IsReserved)
+            {
+                Console.WriteLine(" Room is not currently reserved.");
+            }
+            else
+            {
+                room.CancelReservation();
+                Console.WriteLine($" Reservation for Room {roomNumber} has been cancelled.");
+            }
+        }
+
+
     }
 }
