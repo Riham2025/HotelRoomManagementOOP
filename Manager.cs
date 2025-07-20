@@ -9,9 +9,9 @@ namespace HotelRoomManagement
   // Hotel Manager class to manage room operations
 
 class Manager
-  {
-    // List to store all rooms
-  private List<Room> rooms = new List<Room>(); //. It starts empty.Every time you add a room, it goes into this list.
+   {
+         // List to store all rooms
+         private List<Room> rooms = new List<Room>(); //. It starts empty.Every time you add a room, it goes into this list.
 
         // Method to add a new room
         public void AddRoom(int roomNumber, double dailyRate)
@@ -26,8 +26,8 @@ class Manager
 
     }
 
-    // Method to view all rooms (available + reserved)
-    public void ViewRooms()
+         // Method to view all rooms (available + reserved)
+        public void ViewRooms()
     {
         if (rooms.Count == 0) //Loops through the list of rooms.
             {
@@ -45,6 +45,22 @@ class Manager
         // Method to reserve a room for a guest
         public void ReserveRoom(int roomNumber, string guestName, int nights)
         {
+            // Search for the room with the given room number
+            Room room = rooms.Find(r => r.RoomNumber == roomNumber);
+
+            if (room == null)
+            {
+                Console.WriteLine(" Room not found.");
+            }
+            else if (room.IsReserved)
+            {
+                Console.WriteLine(" Room is already reserved.");
+            }
+            else
+            {
+                room.Reserve(guestName, nights); // Use Room class method
+                Console.WriteLine($" Room {roomNumber} reserved successfully for {guestName}.");
+            }
 
         }
     }  
