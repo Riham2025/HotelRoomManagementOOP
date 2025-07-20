@@ -139,7 +139,7 @@ class Manager
             foreach (string line in lines) //Reads each line from the file
             {
                 string[] parts = line.Split(',');
-
+                //Parses values (room number, rate, reserved, guest, nights)
                 int roomNumber = int.Parse(parts[0]);
                 double dailyRate = double.Parse(parts[1]);
                 bool isReserved = bool.Parse(parts[2]);
