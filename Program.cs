@@ -15,6 +15,7 @@
                 Console.WriteLine("1. Add New Room");
                 Console.WriteLine("2. View All Rooms");
                 Console.WriteLine("3. Reserve a Room");
+                Console.WriteLine("4. View All Reservations with Total Cost");
                 Console.WriteLine("0. Exit");
                 Console.Write("Select an option: ");
 
