@@ -6,39 +6,46 @@ using System.Threading.Tasks;
 
 namespace HotelRoomManagement
 {
-    // Hotel Manager class to manage room operations
-    class Manager
+  // Hotel Manager class to manage room operations
+
+                              /*What this class does:
+                              Stores all rooms in a list.
+                              Can add new rooms.
+                              Can display all rooms.*/
+
+
+class Manager
+{
+    // List to store all rooms
+    private List<Room> rooms = new List<Room>();
+
+    // Method to add a new room
+    public void AddRoom(int roomNumber, double dailyRate)
     {
-        // List to store all rooms
-        private List<Room> rooms = new List<Room>();
+        // Create new Room object with user input
+        Room newRoom = new Room(roomNumber, dailyRate);
 
-        // Method to add a new room
-        public void AddRoom(int roomNumber, double dailyRate)
+        // Add the new room to the list
+        rooms.Add(newRoom);
+
+        Console.WriteLine("Room added successfully."); // Confirmation message
+
+    }
+
+    // Method to view all rooms (available + reserved)
+    public void ViewRooms()
+    {
+        if (rooms.Count == 0)
         {
-            // Create new Room object with user input
-            Room newRoom = new Room(roomNumber, dailyRate);
-
-            // Add the new room to the list
-            rooms.Add(newRoom);
-
-            Console.WriteLine("Room added successfully."); // Confirmation message
-
+            Console.WriteLine("No rooms added yet."); // Handle empty list case
+            return;
         }
 
-        // Method to view all rooms (available + reserved)
-        public void ViewRooms()
+        Console.WriteLine("\nList of all rooms:");
+        foreach (Room room in rooms)
         {
-            if (rooms.Count == 0)
-            {
-                Console.WriteLine("No rooms added yet."); // Handle empty list case
-                return;
-            }
-
-            Console.WriteLine("\nList of all rooms:");
-            foreach (Room room in rooms)
-            {
-                Console.WriteLine(room); // Uses Room.ToString()
-            }
+            Console.WriteLine(room); // Uses Room.ToString()
         }
     }
+}
 }
