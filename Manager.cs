@@ -149,7 +149,7 @@ class Manager
                 Room room = new Room(roomNumber, dailyRate); //Creates a new Room object with the parsed values
                 if (isReserved)
                 {
-                    room.Reserve(guestName, nights);
+                    room.Reserve(guestName, nights); // If reserved, set guest name and nights
                 }
 
                 rooms.Add(room);
