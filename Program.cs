@@ -6,12 +6,13 @@
 
         static void Main(string[] args)
         {
+            Manager manager = new Manager();
             string filePath = "rooms.txt"; // File to store data
             manager.LoadFromFile(filePath);
 
 
-            // Create a HotelManager object to manage the hotel system
-            Manager manager = new Manager();
+            
+            
 
             bool running = true;
             while (running)
