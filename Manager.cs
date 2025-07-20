@@ -161,9 +161,15 @@ class Manager
         // Method to search for reservations by guest name
         public void SearchByGuestName(string guestName)
         {
+            bool found = false;
+
+            Console.WriteLine($"\nSearching for reservations by guest: {guestName}");
+
+            foreach (Room room in rooms) //Loops through all rooms
+            {
 
 
 
 
-        }
+            }
 }
