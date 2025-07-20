@@ -58,7 +58,8 @@ class Manager
             }
             else
             {
-                room.Reserve(guestName, nights); // Use Room class method
+                room.Reserve(guestName, nights, reservationDate); // Calls the Reserve method in Room class to reserve the room
+
                 Console.WriteLine($" Room {roomNumber} reserved successfully for {guestName}.");
             }
 
