@@ -15,7 +15,7 @@ namespace HotelRoomManagement
         public bool IsReserved { get; set; } // Property: Reservation status (true if reserved)
 
         public string GuestName { get; set; }  // Stores the guest's name
-        public int Nights { get; set; }       // Stores number of nights reserved
+        public int Nights { get; set; }      // Stores number of nights reserved
 
         public void Reserve(string guestName, int nights) //Reserve a room
         {
