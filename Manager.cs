@@ -46,7 +46,7 @@ class Manager
         public void ReserveRoom(int roomNumber, string guestName, int nights)
         {
             // Search for the room with the given room number
-            Room room = rooms.Find(r => r.RoomNumber == roomNumber);
+            Room room = rooms.Find(r => r.RoomNumber == roomNumber); //Finds a room in the list by its number
 
             if (room == null)
             {
