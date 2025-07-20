@@ -70,6 +70,13 @@
                         manager.CancelRoomReservation(cancelRoomNumber);
                         break;
 
+                    case "6":
+                        Console.Write("Enter Guest Name to search: ");
+                        string searchName = Console.ReadLine();
+                        manager.SearchByGuestName(searchName);
+                        break;
+
+
 
 
                     case "0":
