@@ -17,14 +17,15 @@ namespace HotelRoomManagement
         public string GuestName { get; set; }  // Stores the guest's name
         public int Nights { get; set; }      // Stores number of nights reserved
 
-        public void Reserve(string guestName, int nights) //This is a method (action): it reserves the room.
+        public DateTime ReservationDate { get; set; } // Stores the date of reservation
+
+        public void Reserve(string guestName, int nights, DateTime reservationDate)
         {
             GuestName = guestName;
             Nights = nights;
+            ReservationDate = reservationDate;
             IsReserved = true;
         }
-
-        public DateTime ReservationDate { get; set; } // Stores the date of reservation
 
 
         // Constructor to initialize a new room
