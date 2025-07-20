@@ -24,6 +24,7 @@
                 Console.WriteLine("3. Reserve a Room");
                 Console.WriteLine("4. View All Reservations with Total Cost");
                 Console.WriteLine("5. Cancel a Reservation");
+                Console.WriteLine("6. Search Reservation by Guest Name");
                 Console.WriteLine("0. Exit");
                 Console.Write("Select an option: ");
 
