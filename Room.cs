@@ -14,7 +14,7 @@ namespace HotelRoomManagement
         public double DailyRate { get; set; } // Property: Daily rate for the room
         public bool IsReserved { get; set; } // Property: Reservation status (true if reserved)
 
-        public string GuestName { get; set; } // Stores the guest's name
+        public string GuestName { get; set; }  // Stores the guest's name
         public int Nights { get; set; }       // Stores number of nights reserved
 
         public void Reserve(string guestName, int nights) //Reserve a room
@@ -39,18 +39,9 @@ namespace HotelRoomManagement
                    (IsReserved ? "Reserved" : "Available"); // Show room info with status
         }
 
-        public override string ToString()
-        {
-            if (IsReserved)
-            {
-                return $"Room {RoomNumber} | Rate: {DailyRate:C} | Reserved by: {GuestName} for {Nights} nights";
-            }
-            else
-            {
-                return $"Room {RoomNumber} | Rate: {DailyRate:C} | Available";
-            }
+       
 
-        }
+        
     }
 }
 
