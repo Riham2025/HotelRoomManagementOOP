@@ -90,6 +90,7 @@ class Manager
         // Method to cancel reservation by room number
         public void CancelRoomReservation(int roomNumber)
         {
+            //Searches for the room
             Room room = rooms.Find(r => r.RoomNumber == roomNumber);
 
             if (room == null)
