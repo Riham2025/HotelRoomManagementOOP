@@ -37,6 +37,20 @@
                         manager.ViewRooms(); // Show all rooms
                         break;
 
+                    case "3":
+                        Console.Write("Enter Room Number to reserve: ");
+                        int reserveRoomNumber = int.Parse(Console.ReadLine());
+
+                        Console.Write("Enter Guest Name: ");
+                        string guestName = Console.ReadLine();
+
+                        Console.Write("Enter Number of Nights: ");
+                        int nights = int.Parse(Console.ReadLine());
+
+                        manager.ReserveRoom(reserveRoomNumber, guestName, nights); // call method in Manager
+                        break;
+
+
                     case "0":
                         running = false; // Exit the loop
                         Console.WriteLine("Exiting...");
