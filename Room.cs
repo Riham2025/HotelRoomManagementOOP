@@ -53,6 +53,16 @@ namespace HotelRoomManagement
         }
 
 
+        // Method to cancel the reservation
+        public void CancelReservation()
+        {
+            GuestName = null;
+            Nights = 0;
+            IsReserved = false;
+        }
+
+
+
     }
 }
 
