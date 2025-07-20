@@ -109,6 +109,22 @@ class Manager
             }
         }
 
+        public void SaveToFile(string filePath)
+        {
+            using (StreamWriter writer = new StreamWriter(filePath))
+            {
+                foreach (Room room in rooms)
+                {
+                    // Save room info as a line in the file
+                    string line = $"{room.RoomNumber},{room.DailyRate},{room.IsReserved},{room.GuestName},{room.Nights}";
+                    writer.WriteLine(line);
+                }
+            }
+
+            Console.WriteLine(" Rooms saved to file.");
+        }
+
+
 
     }
 }
