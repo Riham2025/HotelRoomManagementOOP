@@ -113,7 +113,7 @@ class Manager
         {
             using (StreamWriter writer = new StreamWriter(filePath))
             {
-                foreach (Room room in rooms)
+                foreach (Room room in rooms) //Loops through each room
                 {
                     // Save room info as a line in the file
                     string line = $"{room.RoomNumber},{room.DailyRate},{room.IsReserved},{room.GuestName},{room.Nights}";
