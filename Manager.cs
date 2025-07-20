@@ -8,19 +8,13 @@ namespace HotelRoomManagement
 {
   // Hotel Manager class to manage room operations
 
-                              /*What this class does:
-                              Stores all rooms in a list.
-                              Can add new rooms.
-                              Can display all rooms.*/
-
-
 class Manager
 {
     // List to store all rooms
-    private List<Room> rooms = new List<Room>();
+  private List<Room> rooms = new List<Room>(); //. It starts empty.Every time you add a room, it goes into this list.
 
-    // Method to add a new room
-    public void AddRoom(int roomNumber, double dailyRate)
+        // Method to add a new room
+        public void AddRoom(int roomNumber, double dailyRate)
     {
         // Create new Room object with user input
         Room newRoom = new Room(roomNumber, dailyRate);
@@ -35,8 +29,8 @@ class Manager
     // Method to view all rooms (available + reserved)
     public void ViewRooms()
     {
-        if (rooms.Count == 0)
-        {
+        if (rooms.Count == 0) //Loops through the list of rooms.
+            {
             Console.WriteLine("No rooms added yet."); // Handle empty list case
             return;
         }
