@@ -146,7 +146,7 @@ class Manager
                 string guestName = parts[3] == "null" ? null : parts[3];
                 int nights = int.Parse(parts[4]);
 
-                Room room = new Room(roomNumber, dailyRate);
+                Room room = new Room(roomNumber, dailyRate); //Creates a new Room object with the parsed values
                 if (isReserved)
                 {
                     room.Reserve(guestName, nights);
