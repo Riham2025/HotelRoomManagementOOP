@@ -167,9 +167,21 @@ class Manager
 
             foreach (Room room in rooms) //Loops through all rooms
             {
-
-
-
-
+                if (room.IsReserved && room.GuestName != null && room.GuestName.Equals(guestName, StringComparison.OrdinalIgnoreCase)) //Checks if the room is reserved and guest name matches
+                {
+                    Console.WriteLine($" Found: Room {room.RoomNumber} | Nights: {room.Nights} | Total: {room.GetTotalCost():C}");
+                    found = true;
+                }
             }
+
+            if (!found)
+            {
+                Console.WriteLine(" No reservation found for this guest.");
+            }
+        }
+
+
+
+
+    }
 }
