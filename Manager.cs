@@ -64,9 +64,8 @@ class Manager
 
         }
 
-        
-        // Method to view all reservations with total cost
-        public void ViewReservations()
+        // Added ViewReservations() method in Manager to display all reserved rooms with total cost.
+        public void ViewReservations() // Method to view all reservations with total cost
         {
             bool anyReservation = false;
 
@@ -84,7 +83,7 @@ class Manager
 
             if (!anyReservation)
             {
-                Console.WriteLine("No reservations found.");
+                Console.WriteLine("No reservations found."); //If no reservations exist, shows a message
             }
         }
 
