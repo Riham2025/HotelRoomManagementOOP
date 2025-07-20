@@ -36,16 +36,17 @@ namespace HotelRoomManagement
             IsReserved = false;            // New room is not reserved by default
         }
 
+
         // Method to return a string representation of the room
         public override string ToString()
         {
             if (IsReserved)
             {
-                return $"Room {RoomNumber} | Rate: {DailyRate:C} | Reserved by: {GuestName} for {Nights} nights | Date: {ReservationDate:yyyy-MM-dd}";
+                return $"Room {RoomNumber} | Rate: {DailyRate:C} | Reserved by: {GuestName} for {Nights} nights | Date: {ReservationDate:yyyy-MM-dd}"; 
             }
             else
             {
-                return $"Room {RoomNumber} | Rate: {DailyRate:C} | Available";
+                return $"Room {RoomNumber} | Rate: {DailyRate:C} | Available"; // Formats the string with room number and rate, indicating it's available
             }
         }
 
