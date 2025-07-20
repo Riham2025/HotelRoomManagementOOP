@@ -64,6 +64,7 @@ class Manager
 
         }
 
+        
         // Method to view all reservations with total cost
         public void ViewReservations()
         {
@@ -80,5 +81,12 @@ class Manager
                     Console.WriteLine($"Room {room.RoomNumber} | Guest: {room.GuestName} | Nights: {room.Nights} | Total: {total:C}");
                 }
             }
-        }  
+
+            if (!anyReservation)
+            {
+                Console.WriteLine("No reservations found.");
+            }
+        }
+
+    }
 }
