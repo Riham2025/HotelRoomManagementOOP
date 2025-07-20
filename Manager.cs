@@ -62,6 +62,8 @@ class Manager
 
                 Console.WriteLine($" Room {roomNumber} reserved successfully for {guestName}.");
             }
+            // Updated ReserveRoom() in Manager class to handle reservation date.
+
 
         }
 
