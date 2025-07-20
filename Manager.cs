@@ -136,7 +136,7 @@ class Manager
 
             string[] lines = File.ReadAllLines(filePath);
 
-            foreach (string line in lines)
+            foreach (string line in lines) //Reads each line from the file
             {
                 string[] parts = line.Split(',');
 
