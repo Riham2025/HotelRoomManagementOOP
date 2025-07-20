@@ -152,10 +152,10 @@ class Manager
                     room.Reserve(guestName, nights); // If reserved, set guest name and nights
                 }
 
-                rooms.Add(room);
+                rooms.Add(room); // Adds the room to the list
             }
 
-            Console.WriteLine("Rooms loaded from file.");
+            Console.WriteLine("Rooms loaded from file."); 
         }
 
 
