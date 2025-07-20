@@ -9,7 +9,7 @@ namespace HotelRoomManagement
   // Hotel Manager class to manage room operations
 
 class Manager
-{
+  {
     // List to store all rooms
   private List<Room> rooms = new List<Room>(); //. It starts empty.Every time you add a room, it goes into this list.
 
@@ -41,5 +41,11 @@ class Manager
             Console.WriteLine(room); // Uses Room.ToString()
         }
     }
-}
+
+        // Method to reserve a room for a guest
+        public void ReserveRoom(int roomNumber, string guestName, int nights)
+        {
+
+        }
+    }  
 }
