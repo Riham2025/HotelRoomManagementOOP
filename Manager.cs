@@ -63,5 +63,12 @@ class Manager
             }
 
         }
-    }  
+
+        // Method to view all reservations with total cost
+        public void ViewReservations()
+        {
+            bool anyReservation = false;
+
+            Console.WriteLine("\n=== List of Reservations ===");
+        }  
 }
