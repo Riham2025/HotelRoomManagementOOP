@@ -124,6 +124,41 @@ class Manager
             Console.WriteLine(" Rooms saved to file.");
         }
 
+        public void LoadFromFile(string filePath)
+        {
+            if (!File.Exists(filePath))
+            {
+                Console.WriteLine(" File not found. Starting with an empty list.");
+                return;
+            }
+
+            rooms.Clear(); // Clear existing data
+
+            string[] lines = File.ReadAllLines(filePath);
+
+            foreach (string line in lines)
+            {
+                string[] parts = line.Split(',');
+
+                int roomNumber = int.Parse(parts[0]);
+                double dailyRate = double.Parse(parts[1]);
+                bool isReserved = bool.Parse(parts[2]);
+                string guestName = parts[3] == "null" ? null : parts[3];
+                int nights = int.Parse(parts[4]);
+
+                Room room = new Room(roomNumber, dailyRate);
+                if (isReserved)
+                {
+                    room.Reserve(guestName, nights);
+                }
+
+                rooms.Add(room);
+            }
+
+            Console.WriteLine("Rooms loaded from file.");
+        }
+
+
 
 
     }
