@@ -70,5 +70,15 @@ class Manager
             bool anyReservation = false;
 
             Console.WriteLine("\n=== List of Reservations ===");
+
+            foreach (Room room in rooms)
+            {
+                if (room.IsReserved)
+                {
+                    anyReservation = true;
+                    double total = room.GetTotalCost();
+                    Console.WriteLine($"Room {room.RoomNumber} | Guest: {room.GuestName} | Nights: {room.Nights} | Total: {total:C}");
+                }
+            }
         }  
 }
