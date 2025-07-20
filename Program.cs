@@ -2,8 +2,14 @@
 {
     internal class Program
     {
+        
+
         static void Main(string[] args)
         {
+            string filePath = "rooms.txt"; // File to store data
+            manager.LoadFromFile(filePath);
+
+
             // Create a HotelManager object to manage the hotel system
             Manager manager = new Manager();
 
@@ -65,6 +71,9 @@
 
 
                     case "0":
+                        manager.SaveToFile(filePath);
+
+
                         running = false; // Exit the loop
                         Console.WriteLine("Exiting...");
                         break;
