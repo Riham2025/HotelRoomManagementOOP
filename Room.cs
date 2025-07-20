@@ -25,7 +25,7 @@ namespace HotelRoomManagement
         }
 
         // Constructor to initialize a new room
-        public Room(int roomNumber, double dailyRate)
+        public Room(int roomNumber, double dailyRate) //This is a constructor: it runs when a new room is created
         {
             RoomNumber = roomNumber;       // Assign the room number
             DailyRate = dailyRate;         // Assign the daily rate
