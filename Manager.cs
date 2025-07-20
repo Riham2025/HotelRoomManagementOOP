@@ -158,8 +158,12 @@ class Manager
             Console.WriteLine("Rooms loaded from file."); 
         }
 
+        // Method to search for reservations by guest name
+        public void SearchByGuestName(string guestName)
+        {
 
 
 
-    }
+
+        }
 }
