@@ -51,6 +51,11 @@
                         manager.ReserveRoom(reserveRoomNumber, guestName, nights); // call method in Manager
                         break;
 
+                    case "4":
+                        manager.ViewReservations();
+                        break;
+
+
 
                     case "0":
                         running = false; // Exit the loop
