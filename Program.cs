@@ -56,7 +56,6 @@
                         break;
 
 
-
                     case "0":
                         running = false; // Exit the loop
                         Console.WriteLine("Exiting...");
