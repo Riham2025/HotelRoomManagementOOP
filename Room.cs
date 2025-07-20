@@ -47,14 +47,10 @@ namespace HotelRoomManagement
 
         // Method to calculate total cost of reservation
         public double GetTotalCost()
+
         {
             return DailyRate * Nights;
         }
-
-
-
-
-
 
 
     }
