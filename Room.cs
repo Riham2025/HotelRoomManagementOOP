@@ -37,17 +37,18 @@ namespace HotelRoomManagement
         }
 
         // Method to return a string representation of the room
-        public override string ToString() //This controls how the room looks when printed
+        public override string ToString()
         {
             if (IsReserved)
             {
-                return $"Room {RoomNumber} | Rate: {DailyRate:C} | Reserved by: {GuestName} for {Nights} nights";
+                return $"Room {RoomNumber} | Rate: {DailyRate:C} | Reserved by: {GuestName} for {Nights} nights | Date: {ReservationDate:yyyy-MM-dd}";
             }
             else
             {
                 return $"Room {RoomNumber} | Rate: {DailyRate:C} | Available";
             }
         }
+
 
         // Method to calculate total cost of reservation
         public double GetTotalCost()
