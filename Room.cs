@@ -19,6 +19,9 @@ namespace HotelRoomManagement
 
         public DateTime ReservationDate { get; set; } // Stores the date of reservation
 
+        public List<Reservation> Reservations { get; set; } = new List<Reservation>(); // List to store reservations for the room
+
+
         public void Reserve(string guestName, int nights, DateTime reservationDate)
         {
             GuestName = guestName;
