@@ -51,16 +51,20 @@ class Manager
             {
                 Console.WriteLine(" Room not found.");
             }
-            else if (room.IsReserved)
-            {
-                Console.WriteLine(" Room is already reserved.");
-            }
             else
             {
-                room.Reserve(guestName, nights, reservationDate); //  
-                Console.WriteLine($" Room {roomNumber} reserved successfully for {guestName} on {reservationDate:yyyy-MM-dd}.");
+                bool success = room.AddReservation(guestName, nights, reservationDate);
+                if (success)
+                {
+                    Console.WriteLine($" Room {roomNumber} reserved successfully for {guestName} on {reservationDate:yyyy-MM-dd}.");
+                }
+                else
+                {
+                    Console.WriteLine(" This room is already reserved for that date.");
+                }
             }
         }
+
 
 
         // Added ViewReservations() method in Manager to display all reserved rooms with total cost.
