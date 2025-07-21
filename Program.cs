@@ -1,4 +1,6 @@
-﻿namespace HotelRoomManagement
+﻿using HotelRoomManagement; // Make sure Validator is visible
+
+namespace HotelRoomManagement
 {
     internal class Program
     {
@@ -35,12 +37,21 @@
                 {
                     case "1":
                         Console.Write("Enter Room Number: ");
-                        int roomNumber = int.Parse(Console.ReadLine()); // Get room number
+                        if (!int.TryParse(Console.ReadLine(), out int roomNumber) || !Validator.IsValidRoomNumber(roomNumber))
+                        {
+                            Console.WriteLine(" Invalid room number. Must be a positive integer.");
+                            break;
+                        }
 
                         Console.Write("Enter Daily Rate: ");
-                        double dailyRate = double.Parse(Console.ReadLine()); // Get rate
+                        if (!double.TryParse(Console.ReadLine(), out double dailyRate) || !Validator.IsValidDailyRate(dailyRate))
+                        {
+                            Console.WriteLine(" Invalid daily rate. Must be a positive number.");
+                            break;
+                        }
 
-                        manager.AddRoom(roomNumber, dailyRate); // Call AddRoom
+                        manager.AddRoom(roomNumber, dailyRate);
+
                         break;
 
                     case "2":
