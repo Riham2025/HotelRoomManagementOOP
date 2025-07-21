@@ -43,12 +43,11 @@ class Manager
     }
 
         // Method to reserve a room for a guest
-        public void ReserveRoom(int roomNumber, string guestName, int nights)
+        public void ReserveRoom(int roomNumber, string guestName, int nights, DateTime reservationDate)
         {
-            // Search for the room with the given room number
-            Room room = rooms.Find(r => r.RoomNumber == roomNumber); //Finds a room in the list by its number
+            Room room = rooms.Find(r => r.RoomNumber == roomNumber);
 
-            if (room == null) //If the room doesn’t exist, print error
+            if (room == null)
             {
                 Console.WriteLine(" Room not found.");
             }
@@ -58,14 +57,11 @@ class Manager
             }
             else
             {
-                room.Reserve(guestName, nights, reservationDate); // Calls the Reserve method in Room class to reserve the room
-
-                Console.WriteLine($" Room {roomNumber} reserved successfully for {guestName}.");
+                room.Reserve(guestName, nights, reservationDate); //  
+                Console.WriteLine($" Room {roomNumber} reserved successfully for {guestName} on {reservationDate:yyyy-MM-dd}.");
             }
-            // Updated ReserveRoom() in Manager class to handle reservation date.
-
-
         }
+
 
         // Added ViewReservations() method in Manager to display all reserved rooms with total cost.
         public void ViewReservations() // Method to view all reservations with total cost

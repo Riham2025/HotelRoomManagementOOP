@@ -60,15 +60,66 @@ namespace HotelRoomManagement
 
                     case "3":
                         Console.Write("Enter Room Number to reserve: ");
-                        int reserveRoomNumber = int.Parse(Console.ReadLine());
+                        if (!int.TryParse(Console.ReadLine(), out int reserveRoomNumber) || !Validator.IsValidRoomNumber(reserveRoomNumber))
+                        {
+                            Console.WriteLine(" Invalid room number.");
+                            break;
+                        }
 
                         Console.Write("Enter Guest Name: ");
                         string guestName = Console.ReadLine();
+                        if (!Validator.IsValidGuestName(guestName))
+                        {
+                            Console.WriteLine(" Guest name cannot be empty.");
+                            break;
+                        }
 
                         Console.Write("Enter Number of Nights: ");
-                        int nights = int.Parse(Console.ReadLine());
+                        if (!int.TryParse(Console.ReadLine(), out int nights) || !Validator.IsValidNights(nights))
+                        {
+                            Console.WriteLine(" Invalid number of nights.");
+                            break;
+                        }
 
-                        manager.ReserveRoom(reserveRoomNumber, guestName, nights); // call method in Manager
+                        Console.Write("Enter Reservation Year: ");
+                        if (!int.TryParse(Console.ReadLine(), out int year))
+                        {
+                            Console.WriteLine(" Invalid year.");
+                            break;
+                        }
+
+                        Console.Write("Enter Reservation Month: ");
+                        if (!int.TryParse(Console.ReadLine(), out int month))
+                        {
+                            Console.WriteLine(" Invalid month.");
+                            break;
+                        }
+
+                        Console.Write("Enter Reservation Day: ");
+                        if (!int.TryParse(Console.ReadLine(), out int day))
+                        {
+                            Console.WriteLine(" Invalid day.");
+                            break;
+                        }
+
+                        DateTime reservationDate;
+                        try
+                        {
+                            reservationDate = new DateTime(year, month, day);
+                            if (!Validator.IsValidReservationDate(reservationDate))
+                            {
+                                Console.WriteLine(" Reservation date cannot be in the past.");
+                                break;
+                            }
+                        }
+                        catch
+                        {
+                            Console.WriteLine(" Invalid date.");
+                            break;
+                        }
+
+                        manager.ReserveRoom(reserveRoomNumber, guestName, nights, reservationDate);
+
                         break;
 
                     case "4":
