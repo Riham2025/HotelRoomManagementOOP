@@ -24,6 +24,11 @@ namespace HotelRoomManagement
             return !string.IsNullOrWhiteSpace(guestName);
         }
 
+        public static bool IsValidNights(int nights)
+        {
+            return nights > 0;
+        }
+
 
 
     }
