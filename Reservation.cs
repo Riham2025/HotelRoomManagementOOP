@@ -25,5 +25,10 @@ namespace HotelRoomManagement
             return $"Guest: {GuestName}, Nights: {Nights}, Date: {ReservationDate:yyyy-MM-dd}";
         }
 
+        public double GetTotalCost(double rate) // This method calculates the total cost of the reservation
+        {
+            return rate * Nights;
+        }
+
     }
 }
