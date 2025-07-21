@@ -43,15 +43,18 @@ namespace HotelRoomManagement
         // Method to return a string representation of the room
         public override string ToString()
         {
-            if (IsReserved)
+            if (Reservations.Count == 0)
+                return $"Room {RoomNumber} | Rate: {DailyRate:C} | Available";
+
+            string result = $"Room {RoomNumber} | Rate: {DailyRate:C} | Reservations:\n";
+            foreach (var res in Reservations)
             {
-                return $"Room {RoomNumber} | Rate: {DailyRate:C} | Reserved by: {GuestName} for {Nights} nights | Date: {ReservationDate:yyyy-MM-dd}"; 
+                result += $"   - {res}\n";
             }
-            else
-            {
-                return $"Room {RoomNumber} | Rate: {DailyRate:C} | Available"; // Formats the string with room number and rate, indicating it's available
-            }
+
+            return result;
         }
+
 
 
         // Method to calculate total cost of reservation
