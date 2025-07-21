@@ -52,11 +52,11 @@ namespace HotelRoomManagement
 
                         manager.AddRoom(roomNumber, dailyRate);
 
-                        break;
+                            break;
 
                     case "2":
                         manager.ViewRooms(); // Show all rooms
-                        break;
+                            break;
 
                     case "3":
                         Console.Write("Enter Room Number to reserve: ");
@@ -120,7 +120,7 @@ namespace HotelRoomManagement
 
                         manager.ReserveRoom(reserveRoomNumber, guestName, nights, reservationDate);
 
-                        break;
+                            break;
 
                     case "4":
                         manager.ViewReservations();
