@@ -136,28 +136,43 @@ class Manager
 
             string[] lines = File.ReadAllLines(filePath);
 
-            foreach (string line in lines) //Reads each line from the file
+            foreach (string line in lines)
             {
                 string[] parts = line.Split(',');
-                //Parses values (room number, rate, reserved, guest, nights)
-                int roomNumber = int.Parse(parts[0]);
-                double dailyRate = double.Parse(parts[1]);
-                bool isReserved = bool.Parse(parts[2]);
-                string guestName = parts[3] == "null" ? null : parts[3];
-                int nights = int.Parse(parts[4]);
-                DateTime reservationDate = DateTime.Parse(parts[5]); // Parses the reservation date
 
-                Room room = new Room(roomNumber, dailyRate);
-                if (isReserved)
+                //  Check if line has enough values
+                if (parts.Length < 6)
                 {
-                    room.Reserve(guestName, nights, reservationDate);
+                    Console.WriteLine(" Skipping invalid line (not enough fields): " + line);
+                    continue;
                 }
 
-                rooms.Add(room); // Adds the room to the list
+                try
+                {
+                    int roomNumber = int.Parse(parts[0]);
+                    double dailyRate = double.Parse(parts[1]);
+                    bool isReserved = bool.Parse(parts[2]);
+                    string guestName = parts[3] == "null" ? null : parts[3];
+                    int nights = int.Parse(parts[4]);
+                    DateTime reservationDate = DateTime.Parse(parts[5]);
+
+                    Room room = new Room(roomNumber, dailyRate);
+                    if (isReserved)
+                    {
+                        room.Reserve(guestName, nights, reservationDate);
+                    }
+
+                    rooms.Add(room);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"❌ Error loading line: {line}\n   Reason: {ex.Message}");
+                }
             }
 
-            Console.WriteLine("Rooms loaded from file."); 
+            Console.WriteLine("Rooms loaded from file.");
         }
+
 
         // Method to search for reservations by guest name
         public void SearchByGuestName(string guestName)
