@@ -14,5 +14,11 @@ namespace HotelRoomManagement
             return roomNumber > 0;
         }
 
+        public static bool IsValidDailyRate(double dailyRate)
+        {
+            return dailyRate > 0;
+        }
+
+
     }
 }
