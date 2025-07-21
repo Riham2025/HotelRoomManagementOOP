@@ -166,7 +166,7 @@ class Manager
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine($"❌ Error loading line: {line}\n   Reason: {ex.Message}");
+                    Console.WriteLine($" Error loading line: {line}\n   Reason: {ex.Message}");
                 }
             }
 
