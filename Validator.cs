@@ -29,6 +29,12 @@ namespace HotelRoomManagement
             return nights > 0;
         }
 
+        public static bool IsValidReservationDate(DateTime reservationDate)
+        {
+            return reservationDate.Date >= DateTime.Today;
+        }
+
+
 
 
     }
