@@ -13,7 +13,7 @@ namespace HotelRoomManagement
         public int Nights { get; set; } 
         public DateTime ReservationDate { get; set; }
 
-        public Reservation(string guestName, int nights, DateTime date) 
+        public Reservation(string guestName, int nights, DateTime date) // Constructor to initialize a new reservation
         {
             GuestName = guestName; 
             Nights = nights;
