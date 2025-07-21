@@ -8,5 +8,11 @@ namespace HotelRoomManagement
 {
     class Validator
     {
+
+        public static bool IsValidRoomNumber(int roomNumber)
+        {
+            return roomNumber > 0;
+        }
+
     }
 }
