@@ -72,6 +72,18 @@ namespace HotelRoomManagement
             //Clears guest info and nights
         }
 
+        public bool AddReservation(string guestName, int nights, DateTime date) 
+        {
+            if (Reservations.Any(r => r.ReservationDate.Date == date.Date))
+            {
+                return false; // Already reserved for that date
+            }
+
+            Reservations.Add(new Reservation(guestName, nights, date));
+            return true;
+        }
+
+
 
 
     }
