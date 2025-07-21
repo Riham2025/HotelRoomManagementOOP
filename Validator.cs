@@ -19,6 +19,12 @@ namespace HotelRoomManagement
             return dailyRate > 0;
         }
 
+        public static bool IsValidGuestName(string guestName)
+        {
+            return !string.IsNullOrWhiteSpace(guestName);
+        }
+
+
 
     }
 }
