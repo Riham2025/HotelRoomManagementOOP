@@ -20,5 +20,10 @@ namespace HotelRoomManagement
             ReservationDate = date;
         }
 
+        public override string ToString() // This method returns a string representation of the reservation
+        {
+            return $"Guest: {GuestName}, Nights: {Nights}, Date: {ReservationDate:yyyy-MM-dd}";
+        }
+
     }
 }
